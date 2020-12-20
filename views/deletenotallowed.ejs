@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Deletion error</title>
+    </head>
+    <body>
+        <h1>Deletion Error</h1>
+        <h2>Permission not granted.</h2>
+        <p>The document can only be deleted by its owner: <%= owner %></p>
+        <a href="/details?_id=<%= id %>"><input type="submit" value="Go back"></a>
+    </body>
+</html>

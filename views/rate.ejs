@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+            .form {
+            height: 200px;
+            width: 400px;
+            background: white;
+        
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -125px;
+            }
+        </style>
+        <title>Rate</title>
+    </head>
+    <body>
+        <div class="form">
+            <table border = 1>
+            <tr><td>
+                <h1>Rate</h1>
+                <form action="/rate" method="POST">
+                    <label for="rate">Score (1-10):</label><br>
+                    <input type="number" id="rate" name="rate" min="1" max="10">
+                    <input type="submit" value="Rate">
+                </form>
+            </td></tr>
+            </table>
+        </div>
+    </body>
+</html>

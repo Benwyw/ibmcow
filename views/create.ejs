@@ -1,0 +1,52 @@
+<html>
+    <head><title>Create</title></head>
+    <body>
+        <table>
+            <form action="/create" method ="POST" enctype="multipart/form-data">
+                <tr>
+                    <td><label for="_id">Restaurant id:</label></td>
+                    <td><input name="_id"></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input name="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="borough">Borough:</label></td>
+                    <td><input name="borough"></td>
+                </tr>
+                <tr>
+                    <td><label for="cuisine">Cuisine:</label></td>
+                    <td><input name="cuisine"></td>
+                </tr>
+                <tr>
+                    <td><label for="street">Street:</label></td>
+                    <td><input name="street"></td>
+                </tr>
+                <tr>
+                    <td><label for="building">Building:</label></td>
+                    <td><input name="building"></td>
+                </tr>
+                <tr>
+                    <td><label for="zipcode">Zipcode:</label></td>
+                    <td><input name="zipcode" type="number"></td>
+                </tr>
+                <tr>
+                    <td><label for="lat">Coordinate(lat):</label></td>
+                    <td><input name="lat" type="number" step=0.0000001></td>
+                </tr>
+                <tr>
+                    <td><label for="lon">Coordinate(lon):</label></td>
+                    <td><input name="lon" type="number" step=0.0000001></td>
+                </tr>
+                <tr>
+                    <td><label for="img">Select image:</label></td>
+                    <td><input type="file" name="filetoupload"></td>
+                </tr>
+
+                <tr><td><input type="submit" value="Create"></td></tr>
+            </form>
+                <tr><td><a href="/read"><input type="submit" value="Go back"></a></td></tr>
+        </table>
+    </body>
+</html>

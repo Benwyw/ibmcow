@@ -1,0 +1,38 @@
+<html>
+    <head><title>Details</title></head>
+    <body>
+        <ul>
+            <li>Restaurant ID: <%=restaurant.restaurant_id%></li>
+            <li>Name: <%=restaurant.name%></li>
+            <li>Borough: <%=restaurant.borough%></li>
+            <li>Cuisine: <%=restaurant.cuisine%></li>
+            <li>Street: <%=restaurant.address.street%></li>
+            <li>Building: <%=restaurant.address.building%></li>
+            <li>Zipcode: <%=restaurant.address.zipcode%></li>
+            <li>Coordinate(lat): <%=restaurant.address.lat%></li>
+            <li>Coordinate(lon): <%=restaurant.address.lon%></li>
+            <li>Photo:
+                <% if(restaurant.photo){ %>
+                    <img src="data:image/png;base64,<%= restaurant.photo.buffer.toString('base64')%>" />
+                <% } %>
+            </li>
+            <li>Rating:
+                <ol>
+                    <% for(i in restaurant.grades){ %>
+                        <li><%= restaurant.grades[i].score %> (<%=restaurant.grades[i].user%>)</li>
+                    <% } %>
+                </ol>
+            </li>
+
+            <li>Created by: <%=restaurant.owner%></li>
+            <% if(restaurant.address.lat && restaurant.address.lon){ %>
+            <li><a href="/map?_id=<%= restaurant._id %>">Map</a></li>
+            <% } %>
+        </ul>
+        <a href="/rate?_id=<%= restaurant._id %>"><input type="submit" value="Rate"></a>
+        <a href="/edit?_id=<%= restaurant._id %>"><input type="submit" value="Edit"></a>
+        <a href="/delete?_id=<%= restaurant._id %>"><input type="submit" value="Delete"></a>
+        <a href="/read"><input type="submit" value="Go back"></a>
+        </form>
+    </body>
+</html>

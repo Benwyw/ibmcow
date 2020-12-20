@@ -1,0 +1,12 @@
+<html>
+    <head><title>Search results</title></head>
+    <body>
+        <H1>Searching results:</H1>
+        <ul>
+            <% restaurant.forEach(function(r){ %>
+            <li><a href="/details?_id=<%= r._id %>"><%= r.name %></a></li>
+            <% }); %>
+        </ul>
+        <button onClick="location.href='/searching'">Back</button>
+    </body>
+</html>

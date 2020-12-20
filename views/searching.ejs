@@ -1,0 +1,24 @@
+<html>
+    <head><title>Search</title></head>
+    <body>
+        
+        <table>
+            <form action="/search" method ="POST">
+                <tr>
+                    <td>
+                        <label for="name">Name:</label><br>
+                        <label for="borough">Borough:</label><br>
+                        <label for="cuisine">Cuisine:</label>
+                    </td>
+                    <td>
+                    <input name="name" ><br>
+                    <input name="borough" ><br>
+                    <input name="cuisine">
+                    </td>
+                </tr>
+                <tr><td><input type="submit" value="Search"></td></tr>
+            </form>
+            <tr><td><button onClick="location.href='/read'">Back</button></td></tr>
+        </table>
+    </body>
+</html>

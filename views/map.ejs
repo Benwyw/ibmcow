@@ -1,0 +1,30 @@
+<html>
+   <head>
+      <title>Leaflet sample</title>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+      <title>Map</title>
+   </head>
+
+   <body>
+      <div id = "map" style = "width: 900px; height: 580px"></div>
+      <script>
+         var mapOptions = {
+            center: [<%=lat%>,<%=lon%>],
+            zoom: 15
+         }
+         
+         var map = new L.map('map', mapOptions);
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         map.addLayer(layer);
+         var marker = L.marker([<%=lat%>,<%=lon%>]);
+         marker.addTo(map);
+      </script>
+      <a href="/details?_id=<%=_id %>"><input type="submit" value="Go back"></a>
+   </body>
+   
+</html>

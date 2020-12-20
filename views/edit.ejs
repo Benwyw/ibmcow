@@ -1,0 +1,53 @@
+<html>
+    <head><title>Edit</title></head>
+    <body>
+        <h1>Edit</h1>
+
+        <table>
+            <form action="/edit?_id=<%= restaurant._id %>" method ="POST" enctype="multipart/form-data"></form>
+                <tr>
+                    <td><label for="_id">Restaurant id:</label></td>
+                    <td><input name="_id" value="<%= restaurant.restaurant_id %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input name="name" value="<%= restaurant.name %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="borough">Borough:</label></td>
+                    <td><input name="borough" value="<%= restaurant.borough %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="cuisine">Cuisine:</label></td>
+                    <td><input name="cuisine" value="<%= restaurant.cuisine %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="street">Street:</label></td>
+                    <td><input name="street" value="<%= restaurant.address.street %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="building">Building:</label></td>
+                    <td><input name="building" value="<%= restaurant.address.building %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="zipcode">Zipcode:</label></td>
+                    <td><input name="zipcode" value="<%= restaurant.address.zipcode %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="lat">Coordinate(lat):</label></td>
+                    <td><input name="lat" type="number" step=0.0000001 value="<%= restaurant.address.lat %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="lon">Coordinate(lon):</label></td>
+                    <td><input name="lon" type="number" step=0.0000001 value="<%= restaurant.address.lon %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="img">Select image:</label></td>
+                    <td><input type="file" name="filetoupload"></td>
+                </tr>
+                <tr><td><input type="submit" value="Edit"></td></tr>
+            </form>
+            <tr><td><a href="/details?_id=<%= restaurant._id %>"><input type="submit" value="Go back"></a></td></tr>
+        </table>
+    </body>
+</html>

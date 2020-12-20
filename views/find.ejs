@@ -1,0 +1,23 @@
+<html>
+    <head><title>Restaurants</title></head>
+    <body>
+        <H1>Restaurants</H1>
+        <H2>User: <%= req.session.userid %></H2>
+        <H3>Showing (<%= restaurant.length %>) documents (criteria:{<%= criteria %>})</H3>
+        <form action="/create" method="GET">
+            <input type="submit" value="Create New Restaurant">
+        </form>
+        <form action="/searching" method="GET">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/logout" method="GET">
+            <input type="submit" value="Logout">
+        </form>
+        <u>Name:</u>
+        <ul>
+            <% restaurant.forEach(function(r){ %>
+            <li><a href="/details?_id=<%= r._id %>"><%= r.name %></a></li>
+            <% }); %>
+        </ul>
+    </body>
+</html>

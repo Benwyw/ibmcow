@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+        .form {
+        height: 200px;
+        width: 400px;
+        background: white;
+    
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -125px;
+        }
+        .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        </style>
+        <title>Login</title>
+    </head>
+    <body>
+    <H1>Login</H1>
+    <center><div class="loader"></div></center>
+    <div class="form">
+    <table border = 1>
+    <tr><td>
+    <form action="/processlogin" method="post">
+    <p>
+    <table border = 0>
+      <tr>
+      <td>
+      <label>Name:</label>
+      </td>
+      <td>
+      <input name="id" type="text" style="width:90%" required>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <label>Password:</label>
+      </td>
+      <td>
+      <input name="password" type="password" style="width:90%" >
+      </td>
+      </tr>
+      <tr>
+      <td></td>
+      <td style="text-align:left"><button> Log in </button></td>
+      </tr>
+    </table>
+    </p>
+    </form>
+    </td></tr></table>
+    </div>
+    </body>
+<html>
